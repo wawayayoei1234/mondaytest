@@ -1,17 +1,24 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext } from 'react';
+import Test2 from '../pages/test2'
+export const MyContext = createContext();
 
-const DataContext = createContext();
+export const MyProvider = (props) => {
 
-export const useDataContext = () => {
-  return useContext(DataContext);
-};
-
-export const DataProvider = ({ children }) => {
-  const [data, setData] = useState({data1:[] ,data2:[]});
-
+  const { children } = props;
+  const [state, setState] = React.useState({"menuMobile": false,"token":[],"role":[],"country":[],"accessdata":[]});
+console.log(state)
+  React.useEffect(() => {
+  }, []);
+  
   return (
-    <useDataContext.Provider value={{ data, setData }}>
-      {children}
-    </useDataContext.Provider>
+    <>
+    <Test2 settoken={(token) => { setState({ ...state, "token": token }) }}/>
+      {/* <Country setCountryNames={(country) => { setState({ ...state, "country": country }) }} />
+      <GetRole setrole={(role)=>{setState({ ...state, "role": role })}}/>
+      <AccessData accessdata={(accessdata)=>{setState({ ...state, "accessdata": accessdata })}}/> */}
+      <MyContext.Provider value={[state, setState]}>
+        {children}
+      </MyContext.Provider>
+    </>
   );
 };

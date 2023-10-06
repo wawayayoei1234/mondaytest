@@ -1,13 +1,13 @@
 
-import { DataProvider } from '@/context';
+import { MyProvider } from '@/context';
 import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }) {
   return ( 
     <div>
-      <DataProvider>
+      <MyProvider>
         <Component {...pageProps} />
-      </DataProvider>
+      </MyProvider>
     </div>
    );
  }
