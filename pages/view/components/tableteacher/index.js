@@ -34,9 +34,7 @@ function Index() {
               <TableCell>สัญชาติ</TableCell>
               <TableCell>เชื้อชาติ</TableCell>
               <TableCell>วุฒิการศึกษา</TableCell>
-              <TableCell>รหัสวิชา</TableCell>
-              <TableCell>ชื่อวิชา</TableCell>
-              <TableCell>จำนวนหน่วยกิต</TableCell>
+              
             </TableRow>
           </TableHead>
           <TableBody>
@@ -50,9 +48,7 @@ function Index() {
                 <TableCell>{teacher.nationality}</TableCell>
                 <TableCell>{teacher.ethnicity}</TableCell>
                 <TableCell>{teacher.qualification}</TableCell>
-                <TableCell>{teacher.subjectCode}</TableCell>
-                <TableCell>{teacher.subjectName}</TableCell>
-                <TableCell>{teacher.creditHours}</TableCell>
+                
               </TableRow>
             ))}
           </TableBody>

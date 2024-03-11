@@ -33,9 +33,7 @@ function Index() {
               <TableCell>วันเดือนปีเกิด</TableCell>
               <TableCell>สัญชาติ</TableCell>
               <TableCell>เชื้อชาติ</TableCell>
-              <TableCell>รหัสวิชา</TableCell>
-              <TableCell>ชื่อวิชา</TableCell>
-              <TableCell>จำนวนหน่วยกิต</TableCell>
+            
             </TableRow>
           </TableHead>
           <TableBody>
@@ -49,9 +47,7 @@ function Index() {
                 <TableCell>{student.birthDate}</TableCell>
                 <TableCell>{student.nationality}</TableCell>
                 <TableCell>{student.ethnicity}</TableCell>
-                <TableCell>{student.subjectCode}</TableCell>
-                <TableCell>{student.subjectName}</TableCell>
-                <TableCell>{student.creditHours}</TableCell>
+                
               </TableRow>
             ))}
           </TableBody>
