@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@mui/material';
 
 function Index() {
 
@@ -19,21 +19,28 @@ function Index() {
       creditHours: 4,
     },
   ];
+  const Edit = () => {
+
+  }
+  const Delete = () => {
+
+  }
+  
 
   return (
-    <Box>
-      <TableContainer component={Paper} style={{ marginTop: '20px' }}>
+    <Box >
+      <TableContainer component={Paper} style={{ width: '90%', margin: 'auto' }}>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>รหัสประจำตัวครู</TableCell>
-              <TableCell>เพศ</TableCell>
-              <TableCell>ชื่อ</TableCell>
-              <TableCell>นามสกุล</TableCell>
-              <TableCell>วันเดือนปีเกิด</TableCell>
-              <TableCell>สัญชาติ</TableCell>
-              <TableCell>เชื้อชาติ</TableCell>
-              <TableCell>วุฒิการศึกษา</TableCell>
+            <TableCell>Teacher ID</TableCell>
+            <TableCell>Gender</TableCell>
+            <TableCell>First Name</TableCell>
+            <TableCell>Last Name</TableCell>
+            <TableCell>Date of Birth</TableCell>
+            <TableCell>Nationality</TableCell>
+            <TableCell>Ethnicity</TableCell>
+            <TableCell>Educational Qualification</TableCell>
               
             </TableRow>
           </TableHead>
@@ -48,6 +55,14 @@ function Index() {
                 <TableCell>{teacher.nationality}</TableCell>
                 <TableCell>{teacher.ethnicity}</TableCell>
                 <TableCell>{teacher.qualification}</TableCell>
+                <TableCell>
+                <Button variant="contained"   sx={{width: '30%',backgroundColor: '#4CAF50',  marginRight: '5px', }}onClick={(Edit)}>
+                    Edit
+                  </Button>
+                  <Button variant="contained"sx={{width: '30%',backgroundColor: '#f44336', }}onClick={(Delete) }>
+                    Delete
+                  </Button>
+                </TableCell>
                 
               </TableRow>
             ))}

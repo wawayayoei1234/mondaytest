@@ -5,19 +5,20 @@ import React, { useContext } from 'react'
 function Menu () {
     const [state,setState ] = useContext(MyContext)
 const student = () => {
-    setState({ ...state, teblestudent: true,tableteacher: false })
-
-}
+    setState({ ...state, tablestudent:true,tableteacher: false,subject:false  })}
 const teacher = () => {
-    setState({ ...state, teblestudent: false,tableteacher: true })
+    setState({ ...state, tablestudent: false,tableteacher: true,subject:false })
 }
-
+const subject = () => {
+    setState({ ...state, tablestudent: false,tableteacher: false,subject:true})
+}
   return (
-    <Box sx={{display:'flex' ,flexDirection:'row',justifyContent:'center',alignItems:'center', width:"100%"}}>
-        <Button variant="contained" onClick={student} sx={{width:"20%",height:'auto'}}>student</Button>
+    <Box sx={{display:'flex' ,flexDirection:'row',justifyContent:'flex-start',alignItems:'center',paddingLeft:5}}>
+        <Button variant="text" onClick={student} sx={{width:"10%",height:'auto'}}>student</Button>
         <br></br>
-        <Button variant="contained" onClick={teacher} sx={{width:"20%",height:'auto'}}>teacher</Button>
-        
+        <Button variant="text" onClick={teacher} sx={{width:"10%",height:'auto'}}>teacher</Button>
+        <br></br>
+        <Button variant="text" onClick={subject} sx={{width:"10%",height:'auto'}}>subject</Button>  
     </Box>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@mui/material';
 
 function Index() {
 
@@ -12,16 +12,22 @@ function Index() {
       creditHours: 4,
     },
   ];
+  const Edit = () => {
+
+  }
+  const Delete = () => {
+
+  }
 
   return (
     <Box>
-      <TableContainer component={Paper} style={{ marginTop: '20px' }}>
+      <TableContainer component={Paper} style={{ width: '90%', margin: 'auto' }}>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>รหัสวิชา</TableCell>
-              <TableCell>ชื่อวิชา</TableCell>
-              <TableCell>จำนวนหน่วยกิต</TableCell>
+            <TableCell>Subject Code</TableCell>
+            <TableCell>Subject Name</TableCell>
+            <TableCell>Credit Hours</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -30,6 +36,14 @@ function Index() {
                 <TableCell>{teacher.subjectCode}</TableCell>
                 <TableCell>{teacher.subjectName}</TableCell>
                 <TableCell>{teacher.creditHours}</TableCell>
+                <TableCell>
+                <Button variant="contained"   sx={{width: '30%',backgroundColor: '#4CAF50',  marginRight: '5px', }}onClick={(Edit)}>
+                    Edit
+                  </Button>
+                  <Button variant="contained"sx={{width: '30%',backgroundColor: '#f44336', }}onClick={(Delete) }>
+                    Delete
+                  </Button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>

@@ -4,8 +4,8 @@ export const MyContext = createContext();
 export const MyProvider = (props) => {
 
   const { children } = props;
-  const [state, setState] = React.useState({"menuMobile": false,"teblestudent":false,"tableteacher":false});
-console.log(state)
+  const [state, setState] = React.useState({"tablestudent":true,"tableteacher":false, "subject":false});
+
   React.useEffect(() => {
   }, []);
   
